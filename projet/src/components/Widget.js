@@ -5,8 +5,8 @@ class Widget extends Component {
         return (
 
           <div>
-          <p>NIQUE</p>
-            <a href="#">Luke Chesser</a>
+          <p>Bonjour</p>
+            <a href="#">Essais</a>
             </div>
 
         );
