@@ -1,0 +1,15 @@
+.Widget {
+    background-color: #34495e;
+    padding: 1rem;
+}
+
+.Widget .content {
+    font-size: 15em;
+    font-weight: bold;
+}
+
+.PieWidget
+{
+  background-color: #34495e;
+  padding: 1rem;
+}
