@@ -13,6 +13,7 @@ class Widget extends Component {
               </h2>
             </div>
 
+
           <div className="content">
             {this.props.contenu}
             </div>
