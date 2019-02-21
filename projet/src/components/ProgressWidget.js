@@ -32,7 +32,7 @@ class ProgressWidget extends Component {
           </div>
         <div>
 
-        <ProgressBar animated label={`${this.props.data}%`} now={this.props.data}/>
+        <ProgressBar animated label={`${this.props.data2}%`} now={this.props.data}/>
 
         </div>
 
@@ -45,7 +45,7 @@ class ProgressWidget extends Component {
           </div>
         <div>
 
-        <ProgressBar animated label={`${this.props.data}%`} now={this.props.data}/>
+        <ProgressBar animated label={`${this.props.data3}%`} now={this.props.data}/>
 
         </div>
 

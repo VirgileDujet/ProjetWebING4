@@ -12,11 +12,36 @@
 .PieWidget
 {
   background-color: #34495e;
-
+  padding: 1rem;
   text-align: center;
 }
 
-.mySlides {display:none;}
+.TimerWidget
+{
+  background-color: #34495e;
+ padding: 1rem;
+ font-size: 2em;
+}
+
+.VoteWidget
+{
+   background-color: #34495e;
+  padding: 1rem;
+  font-size: 2em;
+
+}
+
+.PieContent
+{
+  height : 300px;
+  widht:50px;
+}
+
+.Votecontent
+{
+  height : 500px;
+  widht:50px;
+}
 
 .ProgressWidget
 {
@@ -26,10 +51,7 @@
   height:max;
 }
 
-.Image{
 
-    height:10px;
-}
 
 /* Make the container relative */
 .swap-on-hover {
