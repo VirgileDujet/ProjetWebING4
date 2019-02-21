@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import {
   PieChart, Pie, Legend, Tooltip,
 } from 'recharts';
+import logo from '../style/img.jpg';
 
 const data01 = [
   { name: 'Group A', value: 400 }, { name: 'Group B', value: 300 },
@@ -25,6 +26,8 @@ export default class Example extends PureComponent {
           <h2>
               {this.props.titre}
           </h2>
+
+
         </div>
 
 

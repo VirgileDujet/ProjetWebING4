@@ -2,13 +2,10 @@ import React, { Component } from 'react';
 import '../style/Widget.css';
 
 
-class Widget extends Component {
+class ImageWidget extends Component {
     render() {
 
-
-
-
-
+var i = this.props.couverture;
 
         return (
 
@@ -22,7 +19,7 @@ class Widget extends Component {
 
 
           <div className="content">
-            {this.props.contenu}
+            <img src={require(i)} />
             </div>
         </div>
 
@@ -30,12 +27,7 @@ class Widget extends Component {
     }
 }
 
-// Provide default settings for when they aren't supplied
-Widget.defaultProps = {
-    heading: "Unnamed Widget",
-    colspan: 1,
-    rowspan: 1
-}
 
 
-export default Widget;
+
+export default ImageWidget;
