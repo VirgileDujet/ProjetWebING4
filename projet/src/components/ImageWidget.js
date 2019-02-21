@@ -5,7 +5,6 @@ import '../style/Widget.css';
 class ImageWidget extends Component {
     render() {
 
-var i = this.props.couverture;
 
         return (
 
@@ -19,7 +18,7 @@ var i = this.props.couverture;
 
 
           <div className="content">
-            <img src={require(i)} />
+          <img src={this.props.couv} alt="My Pic"/>
             </div>
         </div>
 

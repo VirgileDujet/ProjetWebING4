@@ -1,7 +1,7 @@
 .Widget {
     background-color: #34495e;
     padding: 1rem;
-    
+
 }
 
 .Widget .content {
@@ -16,12 +16,19 @@
   text-align: center;
 }
 
+.mySlides {display:none;}
+
 .ProgressWidget
 {
   background-color: #34495e;
   padding: 1rem;
   font-size: 2em;
   height:max;
+}
+
+.Image{
+
+    height:10px;
 }
 
 /* Make the container relative */
