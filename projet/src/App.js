@@ -33,7 +33,7 @@ const datapie = [
 ///VALEUR DE LA DATE
 var year=2019;
 var month =2;
-var day = 5;
+var day = 6;
 var hours =19;
 var date = new Date(year,month, day, hours);
 
@@ -41,9 +41,21 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.Nb = this.Nb.bind(this);
-      this.Nfond = this.Nfond.bind(this);
 
-    this.state = {places : '0',fond : (5)};
+      this.Nfond = this.Nfond.bind(this);
+      this.Nprepa = this.Nprepa.bind(this);
+      this.Nechau = this.Nechau.bind(this);
+
+      this.Nannee = this.Nannee.bind(this);
+      this.Nmois = this.Nmois.bind(this);
+      this.Njour = this.Njour.bind(this);
+      this.Nheure = this.Nheure.bind(this);
+
+      this.Nlien = this.Nlien.bind(this);
+
+
+
+        this.state = {value: '',places: '0',fond: (1),prepa :(1),echau: (1),jour: (6),mois: (2), annee: (2019), heure : (20), lien: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIIXMhM7wIHrNd1YXmvjzsoadndwcrLBtYsCv-klJjKY5SfRan"};
   }
 
   Nb(nbplaces) {
@@ -54,7 +66,46 @@ class App extends Component {
     this.setState({fond:  nbplaces});
   }
 
+  Nprepa(nbplaces) {
+    this.setState({prepa:  nbplaces});
+  }
 
+  Nechau(nbplaces) {
+    this.setState({echau:  nbplaces});
+  }
+
+  Nannee(nbplaces) {
+    this.setState({annee:  nbplaces});
+
+  }
+
+  Nmois(nbplaces) {
+    this.setState({mois:  nbplaces});
+  }
+
+  Njour(nbplaces) {
+    this.setState({jour:  nbplaces});
+  }
+
+  Nheure(nbplaces) {
+    this.setState({heure:  nbplaces});
+  }
+
+  Nlien(nbplaces) {
+    this.setState({lien:  nbplaces});
+  }
+
+///FONCTION POUR CREER UNE DATE
+  Envoidate(){
+
+    var year=this.state.annee;
+    var month =this.state.mois;
+    var day = this.state.jour;
+    var hours =this.state.heure;
+    var date = new Date(year,month, day, hours);
+
+    return date;
+  }
 
   test(val){
     const ok = val+1;
@@ -74,13 +125,13 @@ class App extends Component {
           <Row>
           <Col sm='4'>
 
-          <Formulaire onNBplace={this.Nb} onNfond={this.Nfond}>
+          <Formulaire onNBplace={this.Nb} onNfond={this.Nfond} onNechau={this.Nechau} onNprepa={this.Nprepa} onNheure={this.Nheure} onNjour={this.Njour} onNmois={this.Nmois} onNannee={this.Nannee} onNlien={this.Nlien}>
           </Formulaire>
             <br/>
             <Widget titre="Places restantes pour ce soir " contenu={this.Envoidata(this.state.places)}>
             </Widget >
             <br/>
-            <ImageWidget titre="Notre pièce de ce soir" couv={this.Envoidata(affiche)}>
+            <ImageWidget titre="Notre pièce de ce soir" couv={this.Envoidata(this.state.lien)}>
             </ImageWidget>
           </Col>
 
@@ -91,7 +142,7 @@ class App extends Component {
               <VoteWidget titre="Vote de la prochaine pièce" datavote= {this.Envoidata(data)}>
               </VoteWidget>
               <br/>
-              <TimerWidget titre="La prochaine pièce est dans :" date = {this.Envoidata(date)}>
+              <TimerWidget titre="La prochaine pièce est dans :" date = {this.Envoidate()}>
               </TimerWidget>
             </Col>
 
@@ -99,7 +150,7 @@ class App extends Component {
               <PieWidget titre="Types de places vendues" datapie={this.Envoidata(datapie)}>
               </PieWidget>
                 <br/>
-                <ProgressWidget titre="Fond pour le théatre" titre2="Preparation de la piece" titre3="Echauffement des acteurs"data={this.Envoidata(this.state.fond)} data2={this.test(val2)} data3={this.test(val3)}>
+                <ProgressWidget titre="Fond pour le théatre" titre2="Preparation de la piece" titre3="Echauffement des acteurs"data={this.Envoidata(this.state.fond)} data2={this.Envoidata(this.state.prepa)} data3={this.Envoidata(this.state.echau)}>
                 </ProgressWidget>
               }
             </Col>
