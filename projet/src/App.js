@@ -41,12 +41,17 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.Nb = this.Nb.bind(this);
+      this.Nfond = this.Nfond.bind(this);
 
-    this.state = {places : '0'};
+    this.state = {places : '0',fond : (5)};
   }
 
   Nb(nbplaces) {
-    this.setState({places:  nbplaces});
+    this.setState({places:  nbplaces,fond: 0});
+  }
+
+  Nfond(nbplaces) {
+    this.setState({fond:  nbplaces});
   }
 
 
@@ -69,7 +74,7 @@ class App extends Component {
           <Row>
           <Col sm='4'>
 
-          <Formulaire onNBplace={this.Nb}>
+          <Formulaire onNBplace={this.Nb} onNfond={this.Nfond}>
           </Formulaire>
             <br/>
             <Widget titre="Places restantes pour ce soir " contenu={this.Envoidata(this.state.places)}>
@@ -94,7 +99,7 @@ class App extends Component {
               <PieWidget titre="Types de places vendues" datapie={this.Envoidata(datapie)}>
               </PieWidget>
                 <br/>
-                <ProgressWidget titre="Fond pour le théatre" titre2="Preparation de la piece" titre3="Echauffement des acteurs"data={this.Envoidata(val)} data2={this.test(val2)} data3={this.test(val3)}>
+                <ProgressWidget titre="Fond pour le théatre" titre2="Preparation de la piece" titre3="Echauffement des acteurs"data={this.Envoidata(this.state.fond)} data2={this.test(val2)} data3={this.test(val3)}>
                 </ProgressWidget>
               }
             </Col>
