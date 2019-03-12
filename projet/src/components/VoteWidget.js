@@ -33,6 +33,7 @@ class VoteWidget extends PureComponent {
  <Legend />
  <Bar dataKey="Comique" fill="#8884d8" />
  <Bar dataKey="Dramatique" fill="#82ca9d" />
+  <Bar dataKey="Livide" fill="#82ca9d" />
                   </BarChart>
             </ResponsiveContainer>
             </div>

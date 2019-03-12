@@ -1,17 +1,17 @@
+<Formulaire onNBplace={this.Nb} onNfond={this.Nfond} onNechau={this.Nechau} onNprepa={this.Nprepa} onNheure={this.Nheure} onNjour={this.Njour} onNmois={this.Nmois} onNannee={this.Nannee} onNlien={this.Nlien}>
+</Formulaire>
 import React, { Component } from 'react';
-import Widget from './components/Widget';
-import PieWidget from './components/PieWidget';
-import ProgressWidget from './components/ProgressWidget';
-import ImageWidget from './components/ImageWidget'
-import VoteWidget from './components/VoteWidget'
-import TimerWidget from './components/TimerWidget'
-import Formulaire from './components/Formulaire'
-import './style/Widget.css';
-import './App.css'
+import Widget from '../components/Widget';
+import PieWidget from '../components/PieWidget';
+import ProgressWidget from '../components/ProgressWidget';
+import ImageWidget from '../components/ImageWidget'
+import VoteWidget from '../components/VoteWidget'
+import TimerWidget from '../components/TimerWidget'
+import Formulaire from '../components/Formulaire'
+import '../style/Widget.css';
+import '../App.css'
 import {Container,Row,Col,Button} from 'reactstrap';
-import PageDash from './Container/PageDash';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Routes from "./routes";
 //VALEUR BARRE DE CHARGEMENT
 const val = (77);
 const val2 = (77);
@@ -40,7 +40,7 @@ var day = 6;
 var hours =19;
 var date = new Date(year,month, day, hours);
 
-class App extends Component {
+class PageDash extends Component {
   constructor(props) {
     super(props);
     this.Nb = this.Nb.bind(this);
@@ -58,11 +58,11 @@ class App extends Component {
 
 
 
-        this.state = {value: '',places: '4',fond: (1),prepa :(1),echau: (1),jour: (6),mois: (2), annee: (2019), heure : (20), lien: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIIXMhM7wIHrNd1YXmvjzsoadndwcrLBtYsCv-klJjKY5SfRan"};
+        this.state = {value: '',places: '0',fond: (1),prepa :(1),echau: (1),jour: (6),mois: (2), annee: (2019), heure : (20), lien: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIIXMhM7wIHrNd1YXmvjzsoadndwcrLBtYsCv-klJjKY5SfRan"};
   }
 
   Nb(nbplaces) {
-    this.setState({places:  nbplaces});
+    this.setState({places:  nbplaces,fond: 0});
   }
 
   Nfond(nbplaces) {
@@ -124,8 +124,11 @@ class App extends Component {
 
         return (
     <div className="App">
-      <Routes/>
-
+      <Container>
+          <Row>
+          <Formulaire onNBplace={this.Nb} onNfond={this.Nfond} onNechau={this.Nechau} onNprepa={this.Nprepa} onNheure={this.Nheure} onNjour={this.Njour} onNmois={this.Nmois} onNannee={this.Nannee} onNlien={this.Nlien}>
+          </Formulaire>
+        </Container>
       </div>
 
         );
@@ -136,4 +139,4 @@ class App extends Component {
 
 
 
-export default App;
+export default PageDash;

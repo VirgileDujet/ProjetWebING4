@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import Widget from './components/Widget';
-import PieWidget from './components/PieWidget';
-import ProgressWidget from './components/ProgressWidget';
-import ImageWidget from './components/ImageWidget'
-import VoteWidget from './components/VoteWidget'
-import TimerWidget from './components/TimerWidget'
-import Formulaire from './components/Formulaire'
-import './style/Widget.css';
-import './App.css'
+import Widget from '../components/Widget';
+import PieWidget from '../components/PieWidget';
+import ProgressWidget from '../components/ProgressWidget';
+import ImageWidget from '../components/ImageWidget'
+import VoteWidget from '../components/VoteWidget'
+import TimerWidget from '../components/TimerWidget'
+import Formulaire from '../components/Formulaire'
+import '../style/Widget.css';
+import '../App.css'
 import {Container,Row,Col,Button} from 'reactstrap';
-import PageDash from './Container/PageDash';
+import PageDash from './PageDash';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Routes from "./routes";
+import routes from "../routes";
 //VALEUR BARRE DE CHARGEMENT
 const val = (77);
 const val2 = (77);
@@ -40,7 +40,7 @@ var day = 6;
 var hours =19;
 var date = new Date(year,month, day, hours);
 
-class App extends Component {
+class PageDashContainer extends Component {
   constructor(props) {
     super(props);
     this.Nb = this.Nb.bind(this);
@@ -124,8 +124,9 @@ class App extends Component {
 
         return (
     <div className="App">
-      <Routes/>
-
+      <PageDash places={this.state.places} fond={this.state.fond} prepa={this.state.prepa} echau={this.state.echau} jour={this.state.jour} mois={this.state.mois} annee={this.state.annee} heure={this.state.heure} lien={this.state.lien}/>
+      <Formulaire onNBplace={this.Nb} onNfond={this.Nfond} onNechau={this.Nechau} onNprepa={this.Nprepa} onNheure={this.Nheure} onNjour={this.Njour} onNmois={this.Nmois} onNannee={this.Nannee} onNlien={this.Nlien}>
+      </Formulaire>
       </div>
 
         );
@@ -136,4 +137,4 @@ class App extends Component {
 
 
 
-export default App;
+export default PageDashContainer;

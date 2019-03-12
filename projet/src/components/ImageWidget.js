@@ -19,7 +19,13 @@ class ImageWidget extends Component {
 
           <div className="content">
           <img src={this.props.couv}  alt="My Pic"/>
-            </div>
+          <br/>
+          <h2> Titre : </h2>
+          <br/>
+          <h2> Auteur : </h2>
+          <br/>
+          <h2> Meilleur track : </h2>
+          </div>
         </div>
 
         );

@@ -6,7 +6,7 @@ import '../style/Widget.css';
 
 
 
-const Completionist = () => <span>Trop tard pour aujourd'hui !</span>;
+const Completionist = () => <span>Dejà en vente!!</span>;
 class TimerWidget extends Component {
 
   Envoidata(donné){
@@ -36,6 +36,11 @@ class TimerWidget extends Component {
                <Completionist />
               </Countdown>
             </div>
+            <h2>  {this.props.album}</h2>
+              <h2>  De :{this.props.auteur}</h2>
+                <img src={this.props.couv}  alt="My Pic"/>
+
+
         </div>
 
         );

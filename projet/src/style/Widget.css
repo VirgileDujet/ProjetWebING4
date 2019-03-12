@@ -25,11 +25,19 @@
 
 .Formulaire
 {
-  background-color: #34495e;
+background-color: #34495e;
  padding: 1rem;
  font-size: 2em;
 }
 .VoteWidget
+{
+   background-color: #34495e;
+  padding: 1rem;
+  font-size: 2em;
+
+}
+
+.DurationWidget
 {
    background-color: #34495e;
   padding: 1rem;

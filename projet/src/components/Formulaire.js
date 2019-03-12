@@ -7,65 +7,14 @@ class Formulaire extends Component {
     super(props);
     this.state = {value: '',places: '0',fond: (1),prepa :(1),echau: (1),jour: (6),mois: (2), annee: (2019), heure : (20), lien: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIIXMhM7wIHrNd1YXmvjzsoadndwcrLBtYsCv-klJjKY5SfRan"};
 
-    this.handleChange = this.handleChange.bind(this);
 
-    this.handleChangefond = this.handleChangefond.bind(this);
-        this.handleChangeprepa = this.handleChangeprepa.bind(this);
-            this.handleChangeechau = this.handleChangeechau.bind(this);
-
-      this.handleChangeannee = this.handleChangeannee.bind(this);
-        this.handleChangemois = this.handleChangemois.bind(this);
-          this.handleChangejour = this.handleChangejour.bind(this);
-            this.handleChangeheure = this.handleChangeheure.bind(this);
-
-      this.handleChangelien = this.handleChangelien.bind(this);
-
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.ArtistSubmit = this.ArtistSubmit.bind(this);
+      this.AlbumSubmit = this.AlbumSubmit.bind(this);
+        this.TracksSubmit = this.TracksSubmit.bind(this);
   }
 
-  handleChange(e) {
-      this.setState({places:  e.target.value});
-    //  this.props.onNBplace(e.target.value);
-  }
-  ///SETTER DE STATE
-  handleChangefond(e) {
-      this.setState({fond:  e.target.value});
-    //  this.props.onNBplace(e.target.value);
-  }
 
-  ///SETTER DE STATE
-  handleChangeprepa(e) {
-      this.setState({prepa:  e.target.value});
-    //  this.props.onNBplace(e.target.value);
-  }
-
-  ///SETTER DE STATE
-  handleChangeechau(e) {
-      this.setState({echau:  e.target.value});
-    //  this.props.onNBplace(e.target.value);
-  }
-
-  handleChangeannee(e) {
-      this.setState({annee:  e.target.value});
-  }
-
-  handleChangemois(e) {
-      this.setState({mois:  e.target.value});
-  }
-
-  handleChangejour(e) {
-      this.setState({jour:  e.target.value});
-  }
-
-  handleChangeheure(e) {
-      this.setState({heure:  e.target.value});
-  }
-
-  handleChangelien(e) {
-      this.setState({lien:  e.target.value});
-  }
-
-  handleSubmit(event) { ///QUAND ON SUBMIT ON APPELLE LES FONCTIONS DU PARENT
+ArtistSubmit(event) {
     this.props.onNBplace(this.state.places);
     this.props.onNfond(this.state.fond);
       this.props.onNechau(this.state.echau);
@@ -81,47 +30,126 @@ class Formulaire extends Component {
     event.preventDefault();
   }
 
+AlbumSubmit(event) {
+
+
+
+    event.preventDefault();
+  }
+
+TracksSubmit(event) {
+
+
+    event.preventDefault();
+  }
+
   render() {
     return (
 
       <div className="Formulaire">
+      <h2>Artiste</h2>
       <form onSubmit={this.handleSubmit}>
         <label>
-          Nombre de places:
-          <input type="text" value={this.props.places} onChange={this.handleChange} />
+          Nom de l'artiste :
+            <br/>
+          <input type="text" value={this.props.places}  />
         </label>
+        <br/>
         <label>
-          Fond:
-          <input type="text" value={this.props.fond} onChange={this.handleChangefond} />
+          Date de naissance :
+            <br/>
+          <input type="text" value={this.props.fond}  />
         </label>
+          <br/>
         <label>
-          Prepa:
-          <input type="text" value={this.props.prepa} onChange={this.handleChangeprepa} />
+          Nombre de followers :
+            <br/>
+          <input type="text" value={this.props.prepa}  />
         </label>
+          <br/>
         <label>
-          Echau:
-          <input type="text" value={this.props.echau} onChange={this.handleChangeechau} />
+          Ref de l'Album :
+            <br/>
+          <input type="text" value={this.props.echau} />
         </label>
-        <label>
-          Année de la prochaine pièce :
-          <input type="text" value={this.props.annee} onChange={this.handleChangeannee} />
-        </label>
-        <label>
-          Mois de la prochaine pièce :
-          <input type="text" value={this.props.mois} onChange={this.handleChangemois} />
-        </label>
-        <label>
-          Jour de la prochaine pièce :
-          <input type="text" value={this.props.jour} onChange={this.handleChangejour} />
-        </label>
-        <label>
-          Heure de la prochaine pièce :
-          <input type="text" value={this.props.heure} onChange={this.handleChangeheure} />
-        </label>
-        <label>
-          Lien de la couverture :
-          <input type="text" value={this.props.lien} onChange={this.handleChangelien} />
-        </label>
+        <input type="submit" value="Submit" />
+        </form>
+          <br/>
+          <br/>
+
+                    <form onSubmit={this.handleSubmit}>
+                    <h2>Album</h2>
+                    <label>
+                     Titre :
+                       <br/>
+                    <input type="text" value={this.props.annee}  />
+                    </label>
+                    <br/>
+                    <label>
+                      Date de sortie:
+                        <br/>
+                      <input type="date" value={this.props.annee} />
+                    </label>
+                      <br/>
+                    <label>
+                      Genre :
+                        <br/>
+                      <input type="text" value={this.props.mois}  />
+                    </label>
+                      <br/>
+                    <label>
+                      Lien Cover :
+                        <br/>
+                      <input type="text" value={this.props.jour}  />
+                    </label>
+                      <br/>
+                    <label>
+                      Reference de tracks:
+                        <br/>
+                      <input type="text" value={this.props.heure}  />
+                    </label>
+                      <br/>
+                    <label>
+                      Lien de la couverture :
+                        <br/>
+                      <input type="text" value={this.props.lien} />
+                    </label>
+                    <input type="submit" value="Submit" />
+                    </form>
+                      <br/>
+                      <br/>
+                                  <form onSubmit={this.handleSubmit}>
+                                  <h2>Track</h2>
+                                  <label>
+                                   Titre :
+                                   <br/>
+                                  <input type="text" value={this.props.annee}  />
+                                  </label>
+                                    <br/>
+                                  <label>
+                                   Durée :
+                                     <br/>
+                                  <input type="text" value={this.props.annee}  />
+                                  </label>
+                                    <br/>
+                                  <label>
+                                   Nombre d'écoutes :
+                                     <br/>
+                                  <input type="text" value={this.props.annee}  />
+                                  </label>
+                                    <br/>
+                                  <label>
+                                   Nombre de likes :
+                                     <br/>
+                                  <input type="text" value={this.props.annee}  />
+                                  </label>
+                                    <br/>
+                                  <label>
+                                  Reference artiste :
+                                    <br/>
+                                  <input type="text" value={this.props.annee} />
+                                  </label>
+                                    <br/>
         <input type="submit" value="Submit" />
       </form>
       </div>
