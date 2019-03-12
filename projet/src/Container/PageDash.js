@@ -5,7 +5,7 @@ import ProgressWidget from '../components/ProgressWidget';
 import ImageWidget from '../components/ImageWidget'
 import VoteWidget from '../components/VoteWidget'
 import TimerWidget from '../components/TimerWidget'
-import Formulaire from '../components/Formulaire'
+import DurationWidget from '../components/DurationWidget'
 import '../style/Widget.css';
 import '../App.css'
 import {Container,Row,Col,Button} from 'reactstrap';
@@ -42,7 +42,7 @@ class PageDash extends Component {
   constructor(props) {
     super(props);
 
-      this.state = {value: '',places: this.props.places ,fond: this.props.fond ,prepa : this.props.prepa,echau: this.props.echau ,jour: this.props.jour ,mois: this.props.mois, annee: this.props.annee, heure : this.props.heure , lien: this.props.lien};
+      this.state = {value: '',places: "NOMBRES" ,fond: this.props.fond ,prepa : this.props.prepa,echau: this.props.echau ,jour: this.props.jour ,mois: this.props.mois, annee: this.props.annee, heure : this.props.heure , lien: this.props.lien};
   }
 
 
@@ -81,7 +81,7 @@ class PageDash extends Component {
             <Widget titre="Nombres de like de nos artistes " contenu={this.Envoidata(this.state.places)}>
             </Widget >
             <br/>
-            <ImageWidget titre="Album du moment" couv={this.Envoidata(this.state.lien)}>
+            <ImageWidget titre="Album du moment" auteur="AUTEUR" titre="TITRE" track="BEST" couv={this.Envoidata(this.state.lien)}>
             </ImageWidget>
           </Col>
 
@@ -100,8 +100,11 @@ class PageDash extends Component {
               <PieWidget titre="Genre des albums vendus" datapie={this.Envoidata(datapie)}>
               </PieWidget>
                 <br/>
-                <ProgressWidget titre="Fond pour création de l'album : " titre2="Preparation des tracks" titre3="Ecriture des paroles" data={this.Envoidata(this.state.fond)} data2={this.Envoidata(this.state.prepa)} data3={this.Envoidata(this.state.echau)}>
+                <ProgressWidget titre="Fond pour création de l'album : " titre2="Preparation des tracks" titre3="Ecriture des paroles" album="ALBUM" data={this.Envoidata(this.state.fond)} data2={this.Envoidata(this.state.prepa)} data3={this.Envoidata(this.state.echau)}>
                 </ProgressWidget>
+                <br/>
+                <DurationWidget titre="Moyenne de nos chanson" moyenne="MOYENNE">
+                </DurationWidget>
               }
             </Col>
           </Row>

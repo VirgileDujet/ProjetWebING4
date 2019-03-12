@@ -16,7 +16,7 @@ class ProgressWidget extends Component {
     <div className="ProgressWidget">
         <div className="header">
             <h2>
-                {this.props.titre}
+                {this.props.titre} {this.props.album}
             </h2>
           </div>
         <div>

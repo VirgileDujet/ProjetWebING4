@@ -31,8 +31,8 @@ class DurationWidgett extends Component {
 
 
           <div className="Durationrcontent">
-
-            </div>
+          <h2> {this.props.moyenne} minutes </h2>
+          </div>
 
 
 
