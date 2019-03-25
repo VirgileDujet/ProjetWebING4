@@ -3,45 +3,21 @@ const express = require('express');
 const _ = require('lodash');
 
 const router = express.Router();
+const Artiste = require("../controllers/artiste.controller.js");
 
 // Create RAW data array
-let artistes = [{
-  nom: "Ellish",
-  id: "0"
-}];
+
 
 /* GET artistes listing. */
-router.get('/', (req, res) => {
-  // Get List of artiste and return JSON
-  res.status(200).json({ artistes });
-});
+router.get('/', Artiste.findAll);
 
 /* GET one artiste. */
-router.get('/:id', (req, res) => {
-  const { id } = req.params;
-  // Find artiste in DB
-  const artiste = _.find(artistes, ["id", id]);
-  // Return artiste
-  res.status(200).json({
-    message: 'artiste found!',
-    artiste
-  });
-});
+router.get('/:id',Artiste.findOne);
+
 
 /* PUT new artiste. */
-router.put('/', (req, res) => {
-  // Get the data from request from request
-  const { artiste } = req.body;
-  // Create new unique id
-  const id = _.uniqueId();
-  // Insert it in array (normaly with connect the data with the database)
-  artistes.push({ artiste, id });
-  // Return message
-  res.json({
-    message: `Just added ${id}`,
-    artiste: { artiste, id }
-  });
-});
+router.put('/',Artiste.create);
+
 
 /* DELETE artiste. */
 router.delete('/:id', (req, res) => {
@@ -62,15 +38,15 @@ router.post('/:id', (req, res) => {
   // Get the :id of the artiste we want to update from the params of the request
   const { id } = req.params;
   // Get the new data of the artiste we want to update from the body of the request
-  const { artiste } = req.body;
+  const { nom } = req.body;
   // Find in DB
   const artisteToUpdate = _.find(artistes, ["id", id]);
   // Update data with new data (js is by address)
-  artisteToUpdate.artiste = artiste;
+  artisteToUpdate.nom = nom;
 
   // Return message
   res.json({
-    message: `Just updated ${id} with ${artiste}`
+    message: `Just updated ${id} with ${nom}`
   });
 });
 

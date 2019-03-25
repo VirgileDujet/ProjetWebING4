@@ -10,6 +10,7 @@ import '../style/Widget.css';
 import '../App.css'
 import {Container,Row,Col,Button} from 'reactstrap';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import axios from 'axios';
 //VALEUR BARRE DE CHARGEMENT
 const val = (77);
 const val2 = (77);
@@ -45,6 +46,19 @@ class PageDash extends Component {
       this.state = {value: '',places: "NOMBRES" ,fond: this.props.fond ,prepa : this.props.prepa,echau: this.props.echau ,jour: this.props.jour ,mois: this.props.mois, annee: this.props.annee, heure : this.props.heure , lien: this.props.lien};
   }
 
+componentWillMount(){
+
+
+axios.get('http://localhost:3030/artistes?limit=1')
+  .then(({ data }) => {
+    const { nom } = data[0];
+    this.setState({ places: nom });
+  })
+  .catch(err => {
+    console.error(err);
+  })
+
+}
 
 
 ///FONCTION POUR CREER UNE DATE
