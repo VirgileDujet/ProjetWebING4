@@ -38,7 +38,8 @@ class TimerWidget extends Component {
             </div>
             <h2>  {this.props.album}</h2>
               <h2>  De :{this.props.auteur}</h2>
-                <img src={this.props.couv}  alt="My Pic"/>
+
+                <img src={this.props.couv} height="240" width="240" alt="My Pic"/>
 
 
         </div>

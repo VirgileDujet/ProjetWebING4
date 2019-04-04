@@ -58,19 +58,20 @@ exports.findOne = (req, res) => {
     .then(artiste => {
       if (!artiste) {
         return res.status(404).send({
-          message: 'artiste not found with id ' + req.params.artisteId
+          message: 'artiste not found with id ' + req.params.id
         });
       }
+      console.log("TAMER")
       res.json(artiste);
     })
     .catch(err => {
       if (err.kind === 'ObjectId') {
         return res.status(404).send({
-          message: 'artiste not found with id ' + req.params.artisteId
+          message: 'artiste not found with id ' + req.params.id
         });
       }
       return res.status(500).send({
-        message: 'Error retrieving artiste with id ' + req.params.artisteId
+        message: 'Error retrieving artiste with id ' + req.params.id
       });
     });
 };
@@ -78,62 +79,148 @@ exports.findOne = (req, res) => {
 // Update a artiste identified by the artisteId in the request
 exports.update = (req, res) => {
   // Validate Request
-  if (!req.body.firstName) {
-    return res.status(400).send({
-      message: 'first name can not be empty'
-    });
-  }
 
-  // Find Artiste and update it with the request body
+  if(req.body.birth!=null)
+  {
+    Artiste.findByIdAndUpdate(
+      req.params.id,
+      {
+        birth: req.body.birth
+          || ''
+      },
+      { new: true }
+    )
+      .then(artiste => {
+        if (!artiste) {
+          return res.status(404).send({
+            message: 'artiste not found with id ' + req.params.id
+          });
+        }
+        res.json(artiste);
+      })
+      .catch(err => {
+        if (err.kind === 'ObjectId') {
+          return res.status(404).send({
+            message: 'artiste not found with id ' + req.params.id
+          });
+        }
+        return res.status(500).send({
+          message: 'Error updating artiste with id ' + req.params.id
+        });
+      });
+  }
+//////////////////////////////////////////////////////////
+if(req.body.nom!=null)
+{
   Artiste.findByIdAndUpdate(
-    req.params.artisteId,
+    req.params.id,
     {
-      nom: req.body.nom,
-      followers: req.body.followers,
-      birth: req.body.birth,
-      albums: req.body.albums || ''
+      nom: req.body.nom
+        || ''
     },
     { new: true }
   )
     .then(artiste => {
       if (!artiste) {
         return res.status(404).send({
-          message: 'artiste not found with id ' + req.params.artisteId
+          message: 'artiste not found with id ' + req.params.id
         });
       }
-      res.send(artiste);
+      res.json(artiste);
     })
     .catch(err => {
       if (err.kind === 'ObjectId') {
         return res.status(404).send({
-          message: 'artiste not found with id ' + req.params.artisteId
+          message: 'artiste not found with id ' + req.params.id
         });
       }
       return res.status(500).send({
-        message: 'Error updating artiste with id ' + req.params.artisteId
+        message: 'Error updating artiste with id ' + req.params.id
       });
     });
+}
+////////////////////////////////////////////////////////////////////
+if(req.body.followers!=null)
+{
+  Artiste.findByIdAndUpdate(
+    req.params.id,
+    {
+      followers: req.body.followers
+        || ''
+    },
+    { new: true }
+  )
+    .then(artiste => {
+      if (!artiste) {
+        return res.status(404).send({
+          message: 'artiste not found with id ' + req.params.id
+        });
+      }
+      res.json(artiste);
+    })
+    .catch(err => {
+      if (err.kind === 'ObjectId') {
+        return res.status(404).send({
+          message: 'artiste not found with id ' + req.params.id
+        });
+      }
+      return res.status(500).send({
+        message: 'Error updating artiste with id ' + req.params.id
+      });
+    });
+}
+///////////////////////////////////////////////////////////
+if(req.body.albums!=null)
+{
+  Artiste.findByIdAndUpdate(
+    req.params.id,
+    {
+      albums: req.body.albums
+        || ''
+    },
+    { new: true }
+  )
+    .then(artiste => {
+      if (!artiste) {
+        return res.status(404).send({
+          message: 'artiste not found with id ' + req.params.id
+        });
+      }
+      res.json(artiste);
+    })
+    .catch(err => {
+      if (err.kind === 'ObjectId') {
+        return res.status(404).send({
+          message: 'artiste not found with id ' + req.params.id
+        });
+      }
+      return res.status(500).send({
+        message: 'Error updating artiste with id ' + req.params.id
+      });
+    });
+}
+
 };
 
 // Delete a artiste with the specified artisteId in the request
 exports.delete = (req, res) => {
-  Artiste.findByIdAndRemove(req.params.artisteId)
+  Artiste.findByIdAndRemove(req.params.id)
     .then(artiste => {
       if (!artiste) {
         return res.status(404).send({
-          message: 'artiste not found with id ' + req.params.artisteId
+          message: 'artiste not found with id ' + req.params.id
         });
       }
-      res.send({ message: 'artiste deleted successfully!' });
+      res.json({ message: 'artiste deleted successfully!' });
     })
     .catch(err => {
       if (err.kind === 'ObjectId' || err.name === 'NotFound') {
         return res.status(404).send({
-          message: 'artiste not found with id ' + req.params.artisteId
+          message: 'artiste not found with id ' + req.params.id
         });
       }
       return res.status(500).send({
-        message: 'Could not delete artiste with id ' + req.params.artisteId
+        message: 'Could not delete artiste with id ' + req.params.id
       });
     });
 };

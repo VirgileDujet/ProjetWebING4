@@ -30,10 +30,18 @@ class VoteWidget extends PureComponent {
  <XAxis dataKey="name" />
  <YAxis />
  <Tooltip />
- <Legend />
- <Bar dataKey="Comique" fill="#8884d8" />
- <Bar dataKey="Dramatique" fill="#82ca9d" />
-  <Bar dataKey="Livide" fill="#82ca9d" />
+ <Legend
+ payload={
+  [
+    { id: 'up', value: this.props.max1, type: 'diamond', color: '#8884d8'},
+    { id: 'uv', value: this.props.max2, type: 'diamond', color: '#0066ff'},
+    { id: 'ug', value: this.props.max3, type: 'diamond', color: '#82ca9d'}
+  ]
+ }
+/>/>
+ <Bar dataKey="premier" fill="#8884d8" />
+ <Bar dataKey="deuxieme" fill="#0066ff" />
+ <Bar dataKey="troisieme" fill="#82ca9d" />
                   </BarChart>
             </ResponsiveContainer>
             </div>

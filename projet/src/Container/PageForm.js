@@ -1,5 +1,4 @@
-<Formulaire onNBplace={this.Nb} onNfond={this.Nfond} onNechau={this.Nechau} onNprepa={this.Nprepa} onNheure={this.Nheure} onNjour={this.Njour} onNmois={this.Nmois} onNannee={this.Nannee} onNlien={this.Nlien}>
-</Formulaire>
+
 import React, { Component } from 'react';
 import Widget from '../components/Widget';
 import PieWidget from '../components/PieWidget';
@@ -119,6 +118,7 @@ class PageDash extends Component {
 
     return donné;
   }
+
 
     render() {
 
