@@ -64,7 +64,7 @@ class Formulairedelete extends Component {
   idChange(event) {
 
     this.setState({id: event.target.value});
-    console.log("ID : "+this.state.id);
+
 
     ////PREMIER///
     axios.get('http://localhost:3030/artistes')
@@ -72,12 +72,12 @@ class Formulairedelete extends Component {
 
         for(var i = 0; i <= data.length; i++)
         {
-              console.log("PFF trouve"+ this.state.id);
+
               if(data[i].nom==this.state.id)
               {
                 var fl = data[i]._id;
                 this.setState({realid: fl});
-                console.log("REUSSI "+ this.state.realid);
+
               }
 
         }
@@ -92,12 +92,12 @@ class Formulairedelete extends Component {
 
           for(var i = 0; i <= data.length; i++)
           {
-                console.log("PFF trouve"+ this.state.id);
+
                 if(data[i].titre==this.state.id)
                 {
                   var fl = data[i]._id;
                   this.setState({realid: fl});
-                  console.log("REUSSI A "+ this.state.realid);
+
                 }
 
           }
@@ -112,12 +112,12 @@ class Formulairedelete extends Component {
 
             for(var i = 0; i <= data.length; i++)
             {
-                  console.log("PFF trouve"+ this.state.id);
+
                   if(data[i].titre==this.state.id)
                   {
                     var fl = data[i]._id;
                     this.setState({realid: fl});
-                    console.log("REUSSI A "+ this.state.realid);
+        
                   }
 
             }
@@ -164,7 +164,7 @@ class Formulairedelete extends Component {
               {
                 var fl = data[i]._id;
                 this.setState({realid: fl});
-                console.log("REUSSI "+ this.state.realid);
+
               }
 
         }
@@ -186,7 +186,7 @@ class Formulairedelete extends Component {
               {
                 var fl = data[i]._id;
                 this.setState({realid: fl});
-                console.log("REUSSI "+ this.state.realid);
+
               }
 
         }
@@ -208,7 +208,7 @@ class Formulairedelete extends Component {
               {
                 var fl = data[i]._id;
                     this.setState({realid: fl});
-                console.log("REUSSI "+ this.state.realid);
+
               }
 
         }
@@ -230,7 +230,7 @@ class Formulairedelete extends Component {
               {
                 var fl = data[i]._id;
                     this.setState({realid: fl});
-                console.log("REUSSI "+ this.state.realid);
+
               }
 
         }
@@ -252,7 +252,7 @@ class Formulairedelete extends Component {
               {
                 var fl = data[i]._id;
                     this.setState({realid: fl});
-                console.log("REUSSI "+ this.state.realid);
+
               }
 
         }
@@ -274,7 +274,7 @@ class Formulairedelete extends Component {
               {
                 var fl = data[i]._id;
                     this.setState({realid: fl});
-                console.log("REUSSI "+ this.state.realid);
+
               }
 
         }
@@ -296,7 +296,7 @@ class Formulairedelete extends Component {
               {
                 var fl = data[i]._id;
                     this.setState({realid: fl});
-                console.log("REUSSI "+ this.state.realid);
+
               }
 
         }
@@ -328,7 +328,7 @@ class Formulairedelete extends Component {
               {
                 var fl = data[i]._id;
                     this.setState({realid: fl});
-                console.log("REUSSI "+ this.state.realid);
+
               }
 
         }
@@ -351,7 +351,7 @@ class Formulairedelete extends Component {
               {
                 var fl = data[i]._id;
                     this.setState({realid: fl});
-                console.log("REUSSI "+ this.state.realid);
+
               }
 
         }
@@ -374,7 +374,7 @@ class Formulairedelete extends Component {
               {
                 var fl = data[i]._id;
                     this.setState({realid: fl});
-                console.log("REUSSI "+ this.state.realid);
+
               }
 
         }
@@ -397,7 +397,7 @@ class Formulairedelete extends Component {
               {
                 var fl = data[i]._id;
                     this.setState({realid: fl});
-                console.log("REUSSI "+ this.state.realid);
+
               }
 
         }

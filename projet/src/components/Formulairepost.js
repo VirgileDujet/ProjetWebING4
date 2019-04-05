@@ -76,7 +76,7 @@ class Formulairepost extends Component {
               {
                 var fl = data[i]._id;
                 this.setState({realid: fl});
-                console.log("REUSSI "+ this.state.realid);
+
               }
 
         }
@@ -98,7 +98,7 @@ class Formulairepost extends Component {
               {
                 var fl = data[i]._id;
                 this.setState({realid: fl});
-                console.log("REUSSI "+ this.state.realid);
+
               }
 
         }
@@ -120,7 +120,7 @@ class Formulairepost extends Component {
               {
                 var fl = data[i]._id;
                 this.setState({realid: fl});
-                console.log("REUSSI "+ this.state.realid);
+
               }
 
         }
@@ -142,7 +142,7 @@ class Formulairepost extends Component {
               {
                 var fl = data[i]._id;
                 this.setState({realid: fl});
-                console.log("REUSSI "+ this.state.realid);
+
               }
 
         }
@@ -164,7 +164,7 @@ class Formulairepost extends Component {
               {
                 var fl = data[i]._id;
                 this.setState({realid: fl});
-                console.log("REUSSI "+ this.state.realid);
+
               }
 
         }
@@ -197,8 +197,7 @@ class Formulairepost extends Component {
       ///////////////////
       if(this.state.likes!="")
       {
-            console.log("DEDANS T");
-            console.log(this.state.likes);
+
             axios.post('http://localhost:3030/tracks/'+this.state.realid, {
 
               like: this.state.likes,
@@ -214,8 +213,7 @@ class Formulairepost extends Component {
         ///////////////////
         if(this.state.duree!="")
         {
-              console.log("DEDANS T");
-              console.log(this.state.duree);
+
               axios.post('http://localhost:3030/tracks/'+this.state.realid, {
 
                 duree: this.state.duree,
@@ -231,8 +229,7 @@ class Formulairepost extends Component {
           ///////////////////
           if(this.state.ecoute!="")
           {
-                console.log("DEDANS T");
-                console.log(this.state.ecoute);
+
                 axios.post('http://localhost:3030/tracks/'+this.state.realid, {
 
                   ecoute: this.state.ecoute,
@@ -248,8 +245,7 @@ class Formulairepost extends Component {
             //////////////////
             if(this.state.feat!="")
             {
-                  console.log("DEDANS T");
-                  console.log(this.state.feat);
+
                   axios.post('http://localhost:3030/tracks/'+this.state.realid, {
 
                     feat: this.state.feat,
@@ -279,7 +275,7 @@ class Formulairepost extends Component {
               {
                 var fl = data[i]._id;
                 this.setState({realid: fl});
-                console.log("REUSSI "+ this.state.realid);
+
               }
 
         }
@@ -301,7 +297,7 @@ class Formulairepost extends Component {
               {
                 var fl = data[i]._id;
                 this.setState({realid: fl});
-                console.log("REUSSI "+ this.state.realid);
+
               }
 
         }
@@ -323,7 +319,7 @@ class Formulairepost extends Component {
               {
                 var fl = data[i]._id;
                     this.setState({realid: fl});
-                console.log("REUSSI "+ this.state.realid);
+
               }
 
         }
@@ -345,7 +341,7 @@ class Formulairepost extends Component {
               {
                 var fl = data[i]._id;
                     this.setState({realid: fl});
-                console.log("REUSSI "+ this.state.realid);
+
               }
 
         }
@@ -367,7 +363,7 @@ class Formulairepost extends Component {
               {
                 var fl = data[i]._id;
                     this.setState({realid: fl});
-                console.log("REUSSI "+ this.state.realid);
+
               }
 
         }
@@ -389,7 +385,7 @@ class Formulairepost extends Component {
               {
                 var fl = data[i]._id;
                     this.setState({realid: fl});
-                console.log("REUSSI "+ this.state.realid);
+
               }
 
         }
@@ -411,7 +407,7 @@ class Formulairepost extends Component {
               {
                 var fl = data[i]._id;
                     this.setState({realid: fl});
-                console.log("REUSSI "+ this.state.realid);
+
               }
 
         }
@@ -430,7 +426,7 @@ class Formulairepost extends Component {
 ///////////////////
 if(this.state.titre!="")
 {
-      console.log("DEDANS P");
+
 
       axios.post('http://localhost:3030/albums/'+this.state.realid, {
 
@@ -447,8 +443,7 @@ if(this.state.titre!="")
   ///////////////////
   if(this.state.sortie!="")
   {
-        console.log("DEDANS S");
-        console.log(this.state.sortie);
+
         axios.post('http://localhost:3030/albums/'+this.state.realid, {
 
           sortie: this.state.sortie,
@@ -464,8 +459,7 @@ if(this.state.titre!="")
     ///////////////////
     if(this.state.genre!="")
     {
-          console.log("DEDANS G");
-          console.log(this.state.genre);
+
           axios.post('http://localhost:3030/albums/'+this.state.realid, {
 
             genre: this.state.genre,
@@ -481,8 +475,7 @@ if(this.state.titre!="")
       ///////////////////
       if(this.state.lien!="")
       {
-            console.log("DEDANS L");
-            console.log(this.state.lien);
+
             axios.post('http://localhost:3030/albums/'+this.state.realid, {
 
               cover: this.state.lien,
@@ -562,7 +555,7 @@ if(this.state.titre!="")
               {
                 var fl = data[i]._id;
                     this.setState({realid: fl});
-                console.log("REUSSI "+ this.state.realid);
+
               }
 
         }
@@ -585,7 +578,7 @@ if(this.state.titre!="")
               {
                 var fl = data[i]._id;
                     this.setState({realid: fl});
-                console.log("REUSSI "+ this.state.realid);
+
               }
 
         }
@@ -608,7 +601,7 @@ if(this.state.titre!="")
               {
                 var fl = data[i]._id;
                     this.setState({realid: fl});
-                console.log("REUSSI "+ this.state.realid);
+
               }
 
         }
@@ -631,7 +624,7 @@ if(this.state.titre!="")
               {
                 var fl = data[i]._id;
                     this.setState({realid: fl});
-                console.log("REUSSI "+ this.state.realid);
+
               }
 
         }
@@ -648,7 +641,7 @@ ArtistSubmit(event) {
 
   if(this.state.birth!="")
   {
-    console.log("DEDANS b");
+
     axios.post('http://localhost:3030/artistes/'+this.state.realid, {
 
       birth: this.state.birth,
@@ -664,7 +657,7 @@ ArtistSubmit(event) {
 /////////
 if(this.state.nom!="")
 {
-  console.log("DEDANS n");
+
   axios.post('http://localhost:3030/artistes/'+this.state.realid, {
 
     nom :this.state.nom,
@@ -680,7 +673,7 @@ if(this.state.nom!="")
 /////////
 if(this.state.followers!="")
 {
-  console.log("DEDANS f");
+
   axios.post('http://localhost:3030/artistes/'+this.state.realid, {
 
     followers: this.state.followers,
@@ -696,7 +689,7 @@ if(this.state.followers!="")
 /////////
 if(this.state.tab!="")
 {
-  console.log("DEDANS");
+
   axios.post('http://localhost:3030/artistes/'+this.state.realid, {
 
     albums: this.state.tab,
