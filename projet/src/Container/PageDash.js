@@ -12,28 +12,9 @@ import {Container,Row,Col,Button} from 'reactstrap';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import axios from 'axios';
 
-//VALEUR BARRE DE CHARGEMENT
-const val = (77);
-const val2 = (77);
-const val3 = (77);
 
-///VALEUR DES PLACES
-const placerestantes = 5;
-///LIEN D AFFICHE
-const affiche = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIIXMhM7wIHrNd1YXmvjzsoadndwcrLBtYsCv-klJjKY5SfRan"
 
-///DATA PIE
-const datapie = [
-  { name: 'Group A', value: 400 }, { name: 'Group B', value: 300 },
-  { name: 'Group C', value: 300 }, { name: 'Group D', value: 200 },
-  { name: 'Group E', value: 278 }, { name: 'Group F', value: 189 },
-];
-///VALEUR DE LA DATE
-var year=2019;
-var month =2;
-var day = 6;
-var hours =19;
-var date = new Date(year,month, day, hours);
+
 
 class PageDash extends Component {
   constructor(props) {
@@ -386,7 +367,7 @@ axios.get('http://localhost:3030/albums')
             <Widget titre="Nombres de followers de nos artistes " contenu={this.Envoidata(this.state.nombre)}>
             </Widget >
             <br/>
-            <ImageWidget titre="Album du moment" auteur={this.state.auteur} titrealbum={this.state.titrealbum}  track={this.state.best} couv={this.Envoidata(this.state.lien)}>
+            <ImageWidget titre="La decouverte" auteur={this.state.auteur} titrealbum={this.state.titrealbum}  track={this.state.best} couv={this.Envoidata(this.state.lien)}>
             </ImageWidget>
           </Col>
 
